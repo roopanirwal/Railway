@@ -15,6 +15,7 @@
             border: 5px solid dodgerblue;
             border-radius: 10px;
             box-shadow: 3px 3px 10px dodgerblue;
+            background-color:antiquewhite;
         }
         #d2{
             
@@ -43,14 +44,19 @@
             margin: 5% 25% 5% 25% ;
             
         }
-        a:link{
-         color:firebrick;
+        a{
+         color:black;
         }
         a:hover{
             color:blueviolet;
         }
         h2{
             text-decoration: underline;
+        }
+        body{
+            background-image: url("corfe.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
         }
        
     </style>

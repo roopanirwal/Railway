@@ -1,9 +1,5 @@
 <html>
 <head>
-    <script>
-    alert("You have successfully authenticated.Now you can create new password.");
-    </script>
-    
     <style>
         h2{
             margin-top: 5%;
@@ -55,10 +51,10 @@ $pwd2 = $_POST['pwd2'];
      
         $uid = $_SESSION['id'];
         $query = "update users
-        set password=$pwd2
+        set password='$pwd2'
         where userid='$uid'";
         if(mysqli_query($con,$query)){
-            echo "updated";
+            header("location:changedpass.php");
         }
         else{
             echo "error: " .mysqli_error($con);
@@ -66,10 +62,4 @@ $pwd2 = $_POST['pwd2'];
     }
 }
 ?>
-
-
-
-
-
-
 

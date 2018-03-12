@@ -48,6 +48,11 @@ mysqli_close($con);
     <title>Sign Up Page</title>
         <script src="signValid.js"></script>
         <style>
+            body{
+                background-image: url("clouds.jpg");
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
             #d1{
               height: 10%;
                 background-color:dodgerblue;
@@ -58,7 +63,7 @@ mysqli_close($con);
             
         #d2{
         width:60%;
-            
+            background-color: antiquewhite;
             
             margin-bottom: 10%;
             margin-left: 20%;
@@ -103,11 +108,24 @@ mysqli_close($con);
                 padding-left: 3%;
                 padding-right: 3%;
             }
+            a{
+                 float: right;
+            color: floralwhite;
+            font-size: 160%;
+            text-decoration: none;
+            margin-right: 2%;
+                margin-top: 1%;
+            }
+            a:hover{
+                color: coral;
+            }
         </style>
     </head>
     <body>
         <div id="d3">
-        <div id="d1"></div>
+        <div id="d1">
+            <a href="index.php">LOGIN</a>
+            </div>
         <div id="d2">
     <h1 align="center">Enter Your Valid Information</h1>
         <form name="signform" action="signup.php" method="get" onsubmit="return validation()">

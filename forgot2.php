@@ -51,7 +51,7 @@ $ans = $_POST['ans'];
         echo "<p align='center'>Please correct your answer</p>";
     }
     else{
-        header("location:newpass.php");
+        header("location:authenticate.php");
     }
     
 }
