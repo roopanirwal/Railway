@@ -1,5 +1,5 @@
 
-A small individual dynamic web project on trains information built with HTML,CSS,Javascript and PHP.
+A small individual dynamic web project on trains information built with HTML,CSS,Javascript and PHP.In this project we can signup,login and if we forgot our password then we can also create new password.After login we can see details of the trains between some stations.
 
 To clone this project in your computer,type the following command in your gitbash-
 
