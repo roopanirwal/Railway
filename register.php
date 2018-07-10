@@ -1,3 +1,7 @@
+<?php
+ session_start();
+ ?>
+
 <html>
     <head>
     <title>Successfully registered</title>
@@ -15,7 +19,7 @@
     <body>
         <h1 align="center">
       <?php
-          session_start();  
+           
             echo "Hello ".$_SESSION['fname'].", You have successfully registered<br>Now you can take your ride.To login<br>";
             
             ?>

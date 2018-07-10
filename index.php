@@ -1,5 +1,6 @@
-
-
+<?php
+session_start();
+?>
 <html>
 <head>
     <title>Indian Railways</title>
@@ -7,23 +8,21 @@
     <style>
        
         #d1{
-            width: 50%;
+            width: 40%;
             height: 50%;
-            margin-left: 25%;
+            margin-left: 30%;
             margin-top: 10%;
             margin-bottom: 2%;
-            border: 5px solid dodgerblue;
-            border-radius: 10px;
-            box-shadow: 3px 3px 10px dodgerblue;
-            background-color:antiquewhite;
+            margin-right: 30%;
+            box-shadow: 2px 2px 20px darkgreen;  
+            background-color: darkseagreen;
+            padding-top: 1%;
         }
+        
         #d2{
-            
             width:100%;
             height:10%;
-            background-color: dodgerblue;
-            
-            
+            background-color: darkseagreen;    
         }
         h1{
             
@@ -37,15 +36,21 @@
              padding-right: 3%;
         }
         input[type="submit"]{
-            background-color:dodgerblue;
-            box-shadow: 2px 2px 3px dodgerblue;
+             background-color: darkseagreen;
+            border: 2px solid darkgreen;
+            box-shadow: 2px 2px 5px forestgreen;
+               cursor: pointer;
+            margin-top: 8%;
         }
         form{
             margin: 5% 25% 5% 25% ;
             
         }
         a{
-         color:black;
+         color: darkred;
+            font-size: 150%;
+            float: right;
+            margin-right: 5%;
         }
         a:hover{
             color:blueviolet;
@@ -57,8 +62,11 @@
             background-image: url("corfe.jpg");
             background-repeat: no-repeat;
             background-size: 100% 100%;
+            margin: 0;
         }
-       
+        #pp{
+            margin-left: 5%;
+        }
     </style>
 </head>
     <body>
@@ -71,16 +79,15 @@
             <h2 align="center">LOGIN</h2>
         
         <form action="index.php" name="firstform" method="post">
-            User id</br>
-            <input type="text" name="id" placeholder="Enter your id" required/></br>
-            Password</br>
-            <input type="password" name="password" placeholder="Enter password" required/></br>
+            User id<br>
+            <input type="text" name="id" placeholder="Enter your id" required/><br>
+            Password<br>
+            <input type="password" name="password" placeholder="Enter password" required/><br>
             <input type="submit" value="LOGIN"/>
         </form>
-
-<?php
-session_start();
-$con=mysqli_connect("localhost","root");
+            <p id="pp">
+    <?php
+     $con=mysqli_connect("localhost","root");
 mysqli_select_db($con,"app");
 if(isset($_POST['id']) && isset($_POST['password'])){
     $id = $_POST['id'];
@@ -105,12 +112,11 @@ if(isset($_GET['logout'])){
 }
 
 mysqli_close($con);
-?>
-
+            ?></p>
     </div>
     
-<p align="center"><a href="forgot.php">Forgot Password</a></p>
- <p align="center"><a href="signup.php">Sign Up</a></p> 
+<p><a href="forgot.php">Forgot Password</a></p><br>
+ <p><a href="signup.php">Sign Up</a></p> 
 </div>
     </body>
 </html>

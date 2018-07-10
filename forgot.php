@@ -1,36 +1,3 @@
-<html>
-<head>
-    <style>
-        #first{
-           padding-left: 1%;
-            padding-right: 1%;
-            height: 5%;
-            width: 20%;
-            margin-bottom: 2%;
-        }
-        form{
-        text-align: center;
-            margin-top: 10%;
-        }
-        p{
-font-size: 25px;
-            margin-bottom: 5px;
-        }
-        #sec{
-            background-color: dodgerblue;
-            width: 5%;
-            height: 5%;
-        }
-    </style>
-    </head>
-    <body>
-        <form action="forgot.php" method="get">
-   <p>Enter your id</p>    
-        <input type="text" placeholder="Userid" name="id" id="first" required><br>
-            <input type="submit" id="sec" value="Next>>">
-        </form>
-    </body>
-</html>
 <?php
 session_start();
 if(isset($_GET['id'])){
@@ -52,3 +19,45 @@ echo "<h2 align='center'>Please enter a valid id</h2>";
 }
 }
 ?>
+
+
+<html>
+<head>
+    <style>
+        #first{
+           padding-left: 1%;
+            padding-right: 1%;
+            height: 5%;
+            width: 20%;
+            margin-bottom: 2%;
+        }
+        form{
+        text-align: center;
+            margin-top: 10%;
+        }
+        p{
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+        #sec{
+             background-color: darkseagreen;
+            border: 2px solid darkgreen;
+            box-shadow: 2px 2px 5px forestgreen;
+               cursor: pointer;
+            width: 5%;
+            height: 5%;
+        }
+        body{
+            background-color: aliceblue;
+        }
+    </style>
+    </head>
+    <body>
+        <form action="forgot.php" method="get">
+   <p>Enter your id</p>    
+        <input type="text" placeholder="Userid" name="id" id="first" required><br>
+            <input type="submit" id="sec" value="Next>>">
+        </form>
+    </body>
+</html>
+

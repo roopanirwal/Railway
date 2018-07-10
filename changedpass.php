@@ -8,6 +8,12 @@
         a:hover{
             color:aqua;
         }
+        body{
+            background-color: aliceblue;
+        }
+        h1{
+            margin-top: 5%;
+        }
     </style>
     </head>
     <body>
