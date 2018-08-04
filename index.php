@@ -1,15 +1,40 @@
 <?php
 session_start();
+$con=mysqli_connect("localhost","root");
+mysqli_select_db($con,"app");
+if(isset($_POST['id']) && isset($_POST['password'])){
+    $id = $_POST['id'];
+    $pass = $_POST['password'];
+    $q="select userid,password,fname from users where userid='$id' and password='$pass'";
+    $result = mysqli_query($con,$q);
+    $num=mysqli_num_rows($result);
+    if($num > 0){
+        $row=mysqli_fetch_row($result);
+        $name=$row[2];
+        $_SESSION['fname']=$name;
+        header("location:login.php");
+        
+    }
+    else{
+        echo "<h3 align='center'>Either id or password is incorrect</h3>";
+    }
+}
+
+if(isset($_GET['logout'])){
+    session_unregister('fname');
+}
+
+mysqli_close($con);
 ?>
 <html>
 <head>
     <title>Indian Railways</title>
     
     <style>
-       
+      
         #d1{
             width: 40%;
-            height: 50%;
+            height: 45%;
             margin-left: 30%;
             margin-top: 10%;
             margin-bottom: 2%;
@@ -22,7 +47,8 @@ session_start();
         #d2{
             width:100%;
             height:10%;
-            background-color: darkseagreen;    
+            background-color: darkseagreen;  
+            
         }
         h1{
             
@@ -64,9 +90,7 @@ session_start();
             background-size: 100% 100%;
             margin: 0;
         }
-        #pp{
-            margin-left: 5%;
-        }
+       
     </style>
 </head>
     <body>
@@ -85,34 +109,7 @@ session_start();
             <input type="password" name="password" placeholder="Enter password" required/><br>
             <input type="submit" value="LOGIN"/>
         </form>
-            <p id="pp">
-    <?php
-     $con=mysqli_connect("localhost","root");
-mysqli_select_db($con,"app");
-if(isset($_POST['id']) && isset($_POST['password'])){
-    $id = $_POST['id'];
-    $pass = $_POST['password'];
-    $q="select userid,password,fname from users where userid='$id' and password='$pass'";
-    $result = mysqli_query($con,$q);
-    $num=mysqli_num_rows($result);
-    if($num > 0){
-        $row=mysqli_fetch_row($result);
-        $name=$row[2];
-        $_SESSION['fname']=$name;
-        header("location:login.php");
-        
-    }
-    else{
-        echo " Either id or password is incorrect";
-    }
-}
-
-if(isset($_GET['logout'])){
-    session_unregister('fname');
-}
-
-mysqli_close($con);
-            ?></p>
+            
     </div>
     
 <p><a href="forgot.php">Forgot Password</a></p><br>
