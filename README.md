@@ -1,8 +1,8 @@
-A small individually created dynamic web project on train ticket reservation built with HTML,CSS,Javascript,MySql,jQuery,PHP and Ajax.
+A small web project on train ticket reservation built with HTML,CSS,Javascript,MySql,jQuery,PHP and Ajax.
 
 To clone this project in your computer,type the following command in your gitbash-
 
-     git clone https://github.com/roopanirwal/Whatsapp-clone.git
+     git clone https://github.com/roopanirwal/Railway.git
   
 Now you can check by running it in your computer by following these steps--
                   
